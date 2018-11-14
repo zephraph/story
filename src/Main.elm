@@ -34,7 +34,7 @@ view : Model -> Browser.Document Msg
 view model =
     { body =
         [ button [ onClick Decrement ] [ text "---" ]
-        -- , div [] [ text (Debug.toString model) ]
+        , div [] [ text (Debug.toString model) ]
         , button [ onClick Increment ] [ text "+++" ]
         ]
     , title = "TypeScript Interop Boilerplate"
@@ -53,8 +53,8 @@ update msg model =
         ReplyReceived message ->
             let
                 _ =
-                    -- Debug.log "ReplyReceived" message
-                    message
+                    Debug.log "ReplyReceived" message
+                    -- message
             in
             ( model, Cmd.none )
 
