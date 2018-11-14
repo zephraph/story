@@ -1,0 +1,29 @@
+{
+  "name": "elm-typescript-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {},
+  "devDependencies": {
+    "chokidar-cli": "^1.2.1",
+    "elm": "^0.19.0",
+    "elm-hot-webpack-loader": "^1.0.2",
+    "elm-typescript-interop": "^0.0.15",
+    "node-elm-compiler": "^5.0.1",
+    "npm-run-all": "^4.1.3",
+    "parcel": "^1.10.3",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.3"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "start": "run-p interop:watch parcel:watch",
+    "parcel:watch": "parcel -p 8080 src/index.html",
+    "interop:watch": "chokidar \"./src/port.ts\" -c elm-typescript-interop",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "elm-typescript-interop && parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
